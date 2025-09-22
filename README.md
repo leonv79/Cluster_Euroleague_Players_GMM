@@ -39,5 +39,10 @@ The addition also of variables like win shares and wins was an attempt to distin
 Below you can see the cluster centers that came up after the analysis:
 <img width="1498" height="916" alt="image" src="https://github.com/user-attachments/assets/fe0a924b-d1c1-4bf8-a00f-4662f5afc813" />
 
-Also how the positions were distributed for each cluster
+Also how the positions were distributed for each cluster:
+
 <img width="424" height="424" alt="image" src="https://github.com/user-attachments/assets/4e8ed81f-2685-4db8-910c-1e73a89fb6e5" />
+
+In general K means does not work well in hgh dimensions, so the selection of many predictors can mess up the final clustering.
+
+One way to overcome this problem would be Principal Component Analysis (PCA)
