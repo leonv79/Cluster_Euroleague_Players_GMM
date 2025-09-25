@@ -45,4 +45,4 @@ Also how the positions were distributed for each cluster:
 
 In general K means does not work well in hgh dimensions, so the selection of many predictors can mess up the final clustering.
 
-One way to overcome this problem would be Principal Component Analysis (PCA)
+One way to overcome this problem would be Principal Component Analysis (PCA), as it reduces dimensionality and keeps the necessary information. Το keep the necessary information we need to 
