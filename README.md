@@ -43,6 +43,52 @@ Also how the positions were distributed for each cluster:
 
 <img width="424" height="424" alt="image" src="https://github.com/user-attachments/assets/4e8ed81f-2685-4db8-910c-1e73a89fb6e5" />
 
-In general K means does not work well in hgh dimensions, so the selection of many predictors can mess up the final clustering.
+In general, K-means does not work well in high dimensions, so the selection of many predictors can mess up the final clustering.
 
-One way to overcome this problem would be Principal Component Analysis (PCA), as it reduces dimensionality and keeps the necessary information. Το keep the necessary information we need to 
+One way to overcome this problem would be Principal Component Analysis (PCA), as it reduces dimensionality while keeping the necessary information. Το keep the necessary information we need to pick the number of components that explain an important part of the original variation. In the following scree plot we see that a 90% variance is covered after 7 components, so that will be the number to use.
+<img width="386" height="279" alt="image" src="https://github.com/user-attachments/assets/55f27c98-2f21-429e-80cb-ce54eff9652e" />
+
+After that we apply the K-means model.
+
+#Step 3: The results
+The results of the clusters along with their visualization (through PCA) are the following:
+
+K-means with the original data
+<img width="801" height="577" alt="image" src="https://github.com/user-attachments/assets/ec416880-8898-44b2-bb07-31b3aa49d66a" />
+
+
+<img width="1520" height="889" alt="image" src="https://github.com/user-attachments/assets/823f216d-b272-488e-82e6-30001cefed5c" />
+
+K-means results after applying PCA
+<img width="801" height="577" alt="image" src="https://github.com/user-attachments/assets/242181ca-36ec-41c9-b42d-0b64c4f9689f" />
+
+
+<img width="1522" height="624" alt="image" src="https://github.com/user-attachments/assets/3adcd392-2165-4f6d-8902-7daeb82cbef3" />
+
+What seems surprising is that the original data seem to give a clearer distinction for the clusters, despite the high dimensionality. 
+
+However both matrices have clusters that don't seem to make much sense (the marked ones in the pictures), even thoough we can't expect the clusters to be perfect. More speicfically for the PCA results, clusters 1,3,4,7,10 are not easy to interpret, as they have clustered players that seem to have really different characteristics. A notable example is cluster 4, where Darius Thompson (a playmaking PG) and Jan Vesely (a heavier center) are grouped together. 
+
+The original data results are a bit clearer, as already mentioned, but they too present some conflicting clusters with clusters 5 and 10. I think it is pretty evident that even for someone who has been barely following last year's Euroleague, can see that Alberto Abalde and Papagiannis for cluster 5, and Voigtmann and Llull for cluster 10 shouldn't be in the same type of cluster.
+
+#Step 4: Gaussian Mixture Models
+So after observing that K-means offered some insight, but not what was expected we will try a different model. A more complex method is Gaussian Mixture Models (GMM). GMM can capture more flexible shapes of clusters, as it assumes that each cluster follows the normal distribution with its own mean and covariance. 
+
+To select the number of clusters in GMMs we will use the AIC/BIC criteria. The results for components 1-15 are the following:
+Components: 1, BIC: 4493.11, AIC: 3865.07
+Components: 2, BIC: 4534.56, AIC: 3275.13
+Components: 3, BIC: 5116.99, AIC: 3226.19
+Components: 4, BIC: 5637.82, AIC: 3115.66
+Components: 5, BIC: 6247.01, AIC: 3093.47
+Components: 6, BIC: 6762.31, AIC: 2977.40
+Components: 7, BIC: 6398.83, AIC: 1982.55
+Components: 8, BIC: 6731.54, AIC: 1683.89
+Components: 9, BIC: 7056.30, AIC: 1377.28
+Components: 10, BIC: 7086.95, AIC: 776.55
+Components: 11, BIC: 7113.75, AIC: 171.98
+Components: 12, BIC: 6531.15, AIC: -1041.99
+Components: 13, BIC: 6539.15, AIC: -1665.36
+Components: 14, BIC: 7340.04, AIC: -1495.84
+
+The goal here is to find the correct balance of clusters, while keeping a low BIC/AIC. As we mentioned earlier components 1-5 are not taken into consideration, so we will check for clusters wit 6+ components. 
+There is a significant drop for AIC with 11 clusters and as it coincides with the number we used in K-means, we will proceed with that number. 
