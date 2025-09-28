@@ -92,3 +92,76 @@ Components: 14, BIC: 7340.04, AIC: -1495.84
 
 The goal here is to find the correct balance of clusters, while keeping a low BIC/AIC. As we mentioned earlier components 1-5 are not taken into consideration, so we will check for clusters wit 6+ components. 
 There is a significant drop for AIC with 11 clusters and as it coincides with the number we used in K-means, we will proceed with that number. 
+
+After applying the GMM model the results are the following (with the most characteristic players marked in each one): 
+
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/5b182418-0c58-4478-b9c9-7fb1d7f0f2e6" />
+
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/3efefea0-34a2-46e9-a355-b998e4df9fab" />
+
+
+As we can see the clusters seem significantly more sensible than the previous attempts. This time the big men are clustered together and categorized based on their performance (clusters 'Elite Cs' and 'The good (but not great) Big Men'). Same goes for guards with clusters 'Starting pg caliber', 'the 'OK' guards' and 'The one step before superstar Guards/Forwards'. 
+
+What really though makes the GMM model stand is the more intuitive clusters. 
+
+The 'Superstar cluster' includes players the MVP race frontrunners along with players who really sttod out throughout the season like Shorts and Maledon. At the same time it includes players with steadily superstar status like Mike James and Nigel Hayes Davis. 
+
+The '3nD' cluster has players with the ability to be serviceable both on defense and behind the 3 point line on offense. 
+
+The 'necessary tools cluster' also is an interesting finding, as it contains players who have the ability to impact the game on different aspects of the game, without necessarily doing anything perfect. 
+
+The most conflicting cluster can be considered the 'The(mostly) empty stats players', as it includes players with heavy responsibilities on their respective teams, that doesn't translate to winning games. Notably these clusters contains only 3 that made it into the F4 and they were mostly complimentary players on their teams. 
+
+After finalizing the results, we can take a look at the distribution of the clusters for each team:
+
+<img width="1157" height="503" alt="image" src="https://github.com/user-attachments/assets/c6a1f1b2-68a5-4481-92a5-b3b9ae54eb15" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/5052327e-f290-4e42-862f-39f2abc4d02a" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/a7d08b1a-7609-4036-966c-6311730a5225" />
+
+<img width="1157" height="503" alt="image" src="https://github.com/user-attachments/assets/4cc96253-ee2f-4952-8377-02f7820efe83" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/a34ca3de-5b34-4259-bed6-3f54936d1218" />
+
+<img width="1157" height="503" alt="image" src="https://github.com/user-attachments/assets/ae720de3-0baf-4110-a394-9f3c9a6938e4" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/d7dc194d-66ec-4f0f-a06e-1ff770beac5b" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/dc9ca40a-0b19-4029-82a7-14aae0d47976" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/06c2bff8-937b-4acc-ac23-924202a25697" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/e5e2ca9d-f31b-42ab-b315-686c848f133e" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/91f296e7-3b20-46ec-a078-2e35f1c729eb" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/340dd6e0-dcad-47fb-b332-f9233056e037" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/ab232427-e79e-42d7-b346-200a5a3a1629" />
+
+<img width="1157" height="495" alt="image" src="https://github.com/user-attachments/assets/80eb9ed6-4b70-4572-a275-4491c315778e" />
+
+<img width="1162" height="554" alt="image" src="https://github.com/user-attachments/assets/7d7507ff-bc44-4fbe-8afd-2989e8007de4" />
+
+<img width="1162" height="554" alt="image" src="https://github.com/user-attachments/assets/180f16ba-1808-4999-8675-1e7d092ed1d3" />
+
+<img width="1157" height="554" alt="image" src="https://github.com/user-attachments/assets/eed0e0df-707f-4a8c-bb66-4a542bddb418" />
+
+<img width="1157" height="503" alt="image" src="https://github.com/user-attachments/assets/a044f97d-3192-4d67-8b91-fd24ad60c146" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
