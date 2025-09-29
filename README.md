@@ -152,6 +152,13 @@ After finalizing the results, we can take a look at the distribution of the clus
 
 
 
+#Possible Improvements
+
+What really stood out to me as a disadvatage in this project, was the model's weakness to recognise athleticism. The game today is really based on athletic wings, bigs and even guards. 
+
+However that was something that was originally expected as this kind of information was not available. 
+
+So something that,in my opinion, could really improve the accuracy of the results is information like height combined with wingspan and pace of the players. 
 
 
 
